@@ -1,0 +1,53 @@
+{
+    "name": "shoplab/shoplab-filament-theme",
+    "description": "Custom Linear-inspired theme for Filament v5 panels",
+    "type": "filament-plugin",
+    "license": "MIT",
+    "keywords": [
+        "filament",
+        "filament-plugin",
+        "laravel",
+        "theme",
+        "tailwind"
+    ],
+    "authors": [
+        {
+            "name": "Shoplab",
+            "email": "dev@shoplab.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Shoplab\\FilamentTheme\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^5.0",
+        "filament/support": "^5.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "pint": "vendor/bin/pint"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shoplab\\FilamentTheme\\FilamentThemeServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

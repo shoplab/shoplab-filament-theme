@@ -1,0 +1,21 @@
+{
+  "name": "@shoplab/shoplab-filament-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Custom Linear-inspired theme for Filament v5 panels",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^6.0",
+    "@tailwindcss/vite": "^4.0"
+  },
+  "keywords": [
+    "filament",
+    "filament-plugin",
+    "laravel",
+    "theme",
+    "tailwind"
+  ]
+}
