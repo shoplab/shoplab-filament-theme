@@ -234,11 +234,6 @@ body {
   color: rgb(var(--sl-text-placeholder));
 }
 
-/* Textarea */
-.fi-textarea {
-  border-radius: var(--sl-radius);
-}
-
 /* Select inputs */
 .fi-select-input {
   font-size: 0.875rem;
@@ -304,6 +299,27 @@ body {
   border-radius: var(--sl-radius);
   transition: var(--sl-transition);
   box-shadow: none;
+}
+
+/* Outlined button */
+.fi-btn.fi-outlined {
+  border: 1px solid rgb(var(--sl-border));
+}
+
+.fi-btn.fi-outlined:not(.fi-disabled):not([disabled]):hover {
+  background-color: rgb(var(--sl-bg-muted));
+}
+
+.fi-btn.fi-outlined.fi-color {
+  border-color: currentColor;
+}
+
+.dark .fi-btn.fi-outlined {
+  border-color: rgb(var(--sl-border-emphasis));
+}
+
+.dark .fi-btn.fi-outlined.fi-color {
+  border-color: currentColor;
 }
 
 /* Primary button */
@@ -497,9 +513,53 @@ body {
   color: rgb(var(--sl-text));
 }
 
-.fi-tabs-item-active {
+.fi-tabs-item.fi-active {
   color: rgb(var(--sl-accent));
   border-bottom-color: rgb(var(--sl-accent));
+  background-color: transparent !important;
+  border-radius: 0;
+}
+
+.fi-tabs-item.fi-active .fi-tabs-item-label,
+.fi-tabs-item.fi-active .fi-icon {
+  color: rgb(var(--sl-accent)) !important;
+}
+
+/* Non-contained tab bar: strip the pill wrapper */
+.fi-tabs:not(.fi-contained) {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  --tw-shadow: 0 0 #0000 !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-color: transparent !important;
+  --tw-inset-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+  border-bottom: 1px solid rgb(var(--sl-border));
+}
+
+/* Tab items: remove hover/focus pill backgrounds */
+.fi-tabs-item:hover,
+.fi-tabs-item:focus-visible {
+  background-color: transparent !important;
+}
+
+/* Tab section container: replace Filament's blue-tinted gray-900 with neutral bg */
+.fi-sc-tabs.fi-contained {
+  background-color: rgb(var(--sl-bg)) !important;
+  border: 1px solid rgb(var(--sl-border));
+  border-radius: var(--sl-radius-md);
+  box-shadow: var(--sl-shadow-xs);
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-color: transparent !important;
+  --tw-inset-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+}
+
+.dark .fi-sc-tabs.fi-contained {
+  background-color: rgb(var(--sl-bg-subtle)) !important;
+  border-color: rgb(var(--sl-border));
 }
 
 /* ==========================================================================
@@ -613,7 +673,7 @@ body {
    11. Notifications
    ========================================================================== */
 
-.fi-notification {
+.fi-no-notification:not(.fi-inline) {
   background-color: rgb(var(--sl-bg));
   border: 1px solid rgb(var(--sl-border));
   border-radius: var(--sl-radius-md);
@@ -621,18 +681,24 @@ body {
   padding: 1rem;
 }
 
-.dark .fi-notification {
-  background-color: rgb(var(--sl-bg-subtle));
+.dark .fi-no-notification:not(.fi-inline) {
+  background-color: rgb(var(--sl-bg-muted)) !important;
   border-color: rgb(var(--sl-border));
+  --tw-ring-color: rgb(var(--sl-border)) !important;
 }
 
-.fi-notification-title {
+/* Colored notifications: blend accent color with neutral bg */
+.dark .fi-no-notification.fi-color {
+  background-color: color-mix(in oklab, rgb(var(--sl-bg-muted)) 90%, var(--color-400)) !important;
+}
+
+.fi-no-notification-title {
   font-size: 0.875rem;
   font-weight: 600;
   color: rgb(var(--sl-text));
 }
 
-.fi-notification-body {
+.fi-no-notification-body {
   font-size: 0.8125rem;
   color: rgb(var(--sl-text-secondary));
 }
@@ -641,16 +707,16 @@ body {
    12. Infolists
    ========================================================================== */
 
-.fi-in-entry-wrp {
+.fi-in-entry {
   padding: 0.75rem 0;
   border-bottom: 1px solid rgb(var(--sl-border-subtle));
 }
 
-.fi-in-entry-wrp:last-child {
+.fi-in-entry:last-child {
   border-bottom: none;
 }
 
-.fi-in-entry-wrp-label {
+.fi-in-entry-label {
   font-size: 0.8125rem;
   font-weight: 500;
   color: rgb(var(--sl-text-secondary));
@@ -683,7 +749,7 @@ body {
   border-radius: var(--sl-radius);
 }
 
-.fi-user-menu-avatar {
+.fi-user-avatar {
   border-radius: var(--sl-radius);
 }
 
