@@ -579,6 +579,10 @@ body {
   border-color: rgb(var(--sl-border));
 }
 
+.dark .fi-modal > .fi-modal-close-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
 .fi-modal-header {
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid rgb(var(--sl-border-subtle));
@@ -605,6 +609,9 @@ body {
   border-radius: var(--sl-radius-md);
   box-shadow: var(--sl-shadow-md);
   padding: 0.25rem;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-inset-ring-shadow: 0 0 #0000;
+  --tw-ring-offset-shadow: 0 0 #0000;
 }
 
 .dark .fi-dropdown-panel {
@@ -621,6 +628,17 @@ body {
 
 .fi-dropdown-list-item:hover {
   background-color: rgb(var(--sl-bg-muted));
+}
+
+.fi-dropdown-list {
+  gap: 0;
+}
+
+/* Remove grouped-action borders inside dropdowns */
+.fi-dropdown-list .fi-ac-grouped-action {
+  border: none;
+  border-radius: 0;
+  overflow: visible;
 }
 
 /* ==========================================================================
